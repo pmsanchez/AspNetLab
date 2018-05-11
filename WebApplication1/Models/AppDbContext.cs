@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-namespace ASPNetExercises.Models
+
+namespace ASPNetexercises.Models
 {
     public class AppDbContext : DbContext
     {

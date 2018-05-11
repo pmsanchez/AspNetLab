@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace ASPNetExercises.Models
+namespace ASPNetexercises.Models
 {
     public class DataUtility
     {

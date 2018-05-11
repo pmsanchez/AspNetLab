@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
-using ASPNetExercises.Models;
+using ASPNetexercises.Models;
 
-namespace WebApplication1.Controllers
+namespace ASPNetexercises.Controllers
 {
     public class DataController : Controller
     {
@@ -31,7 +31,8 @@ namespace WebApplication1.Controllers
             {
                 msg = ex.Message;
             }
-            return Content(msg);
+            ViewData["msg"] = msg;
+            return View();
         }
 
         private async Task<String> getMenuItemJsonFromWeb()
