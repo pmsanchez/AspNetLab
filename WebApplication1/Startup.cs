@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using ASPNetExercises.Models;
 
 namespace WebApplication1
 {
@@ -22,6 +24,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,9 +44,15 @@ namespace WebApplication1
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
+                /*
+                    routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                */
+
+                routes.MapRoute(
+                name: "default",
+                template: "{controller=Data}/{action=Index}/{id?}");
             });
         }
     }
