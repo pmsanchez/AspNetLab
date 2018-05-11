@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using ASPNetExercises.Models;
+using ASPNetexercises.Models;
 
-namespace WebApplication1
+namespace ASPNetexercises
 {
     public class Startup
     {
@@ -49,10 +49,15 @@ namespace WebApplication1
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
                 */
-
+                /*
                 routes.MapRoute(
                 name: "default",
                 template: "{controller=Data}/{action=Index}/{id?}");
+                */
+
+                routes.MapRoute(
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
